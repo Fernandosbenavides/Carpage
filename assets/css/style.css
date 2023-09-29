@@ -1,0 +1,158 @@
+body {
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.navprincipal {
+    grid-area: navprincipal;
+    display: flex;
+    background-color: #00579c;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+}
+ .title {
+    font-size: 40px;
+    font-weight: 700;
+ }
+.burger {
+    background-color: #00579c;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    grid-area: principal;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+form {
+    grid-area: filtros;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #e2e2e2;
+    font-size: large;
+    font-weight: 600;
+}
+
+article {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border: solid 1px silver;
+    margin: 10px;
+}
+
+article img {
+    width: 380px;
+}
+
+.btnproduct {
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #00579c;
+    width: 25%;
+    display: block;
+}
+
+.paginacion {
+    grid-area: paginas;
+}
+
+i {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer p {
+    margin: 4px;
+    font-size: 20px;
+}
+
+footer {
+    grid-area: pie;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #052e66;
+    color: white;
+    font-weight: 600;
+}
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 10% 5% 70% 5% 10%;
+    column-gap: 10px;
+    grid-template-areas:
+        "navprincipal"
+        "filtros"
+        "principal"
+        "paginas"
+        "pie"
+}
+
+@media (max-width: 576px) {
+    .navprincipal p {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 10% 80% 10%;
+        column-gap: 0px;
+        grid-template-areas:
+            "navprincipal filtros"
+            "navprincipal principal"
+            "pie paginas"
+    }
+
+    .navprincipal {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .navprincipal p {
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: white;
+    }
+    .navprincipal p {
+        cursor: pointer;
+    }
+    .paginacion {
+        margin-top: 20px;
+    }
+}
