@@ -10,33 +10,34 @@ body {
     background-color: #00579c;
     color: white;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
- .title {
+
+.title {
     font-size: 40px;
     font-weight: 700;
- }
+}
+
 .burger {
     background-color: #00579c;
     border: none;
     cursor: pointer;
 }
 
-main {
-    grid-area: principal;
-    background-color: white;
-    overflow-y: scroll;
-}
-
 form {
     grid-area: filtros;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     background-color: #e2e2e2;
     font-size: large;
     font-weight: 600;
+}
+
+select {
+    width: 100%;
 }
 
 article {
@@ -45,13 +46,13 @@ article {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     border: solid 1px silver;
-    margin: 10px;
+    margin: 5px;
 }
 
 article img {
-    width: 380px;
+    width: 200px;
 }
 
 .btnproduct {
@@ -63,8 +64,40 @@ article img {
     font-size: 15px;
     font-weight: 600;
     background-color: #00579c;
-    width: 25%;
+    width: 50%;
     display: block;
+}
+
+.producto1 {
+    grid-area: producto1;
+}
+
+.producto2 {
+    grid-area: producto2;
+}
+
+.producto3 {
+    grid-area: producto3;
+}
+
+.producto4 {
+    grid-area: producto4;
+}
+
+.producto5 {
+    grid-area: producto5;
+}
+
+.producto6 {
+    grid-area: producto6;
+}
+
+.producto7 {
+    grid-area: producto7;
+}
+
+.producto8 {
+    grid-area: producto8;
 }
 
 .paginacion {
@@ -96,12 +129,12 @@ footer {
 .grid-container {
     display: grid;
     height: 100vh;
-    grid-template-rows: 10% 5% 70% 5% 10%;
-    column-gap: 10px;
+    grid-template-rows: 10% 7% 68% 5% 10%;
+    grid-template-columns: 100%;
     grid-template-areas:
         "navprincipal"
         "filtros"
-        "principal"
+        "producto1"
         "paginas"
         "pie"
 }
@@ -110,19 +143,77 @@ footer {
     .navprincipal p {
         display: none;
     }
+
+    article {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px;
+        border: solid 1px silver;
+        margin: 15px;
+        font-size: 20px;
+    }
+
+    article img {
+        width: 380px;
+    }
+
+    .btnproduct {
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: #00579c;
+        width: 75%;
+        display: block;
+    }
+
+    .producto2 {
+        display: none;
+    }
+
+    .producto3 {
+        display: none;
+    }
+
+    .producto4 {
+        display: none;
+    }
+
+    .producto5 {
+        display: none;
+    }
+
+    .producto6 {
+        display: none;
+    }
+
+    .producto7 {
+        display: none;
+    }
+
+    .producto8 {
+        display: none;
+    }
 }
 
 @media (min-width: 576px) {
     .grid-container {
         display: grid;
         height: 100vh;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 10% 80% 10%;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        grid-template-rows: 10% 40% 40% 10%;
         column-gap: 0px;
         grid-template-areas:
-            "navprincipal filtros"
-            "navprincipal principal"
-            "pie paginas"
+            "navprincipal filtros filtros filtros filtros"
+            "navprincipal producto1 producto2 producto3 producto4"
+            "navprincipal producto5 producto6 producto7 producto8"
+            "pie  paginas  paginas  paginas paginas"
     }
 
     .navprincipal {
@@ -143,15 +234,10 @@ footer {
         display: none;
     }
 
-    main {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        background-color: white;
-    }
     .navprincipal p {
         cursor: pointer;
     }
+
     .paginacion {
         margin-top: 20px;
     }
